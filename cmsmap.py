@@ -1133,7 +1133,7 @@ class ExploitDBSearch:
             for plugin in self.query:
                 msg =  plugin; report.info(msg)
                 if not NoExploitdb :
-                    htmltext = urllib2.urlopen("http://www.exploit-db.com/search/?action=search&filter_description="+self.cmstype+"&filter_exploit_text="+plugin).read()
+                    htmltext = urllib2.urlopen("https://www.exploit-db.com/search/?action=search&filter_description="+self.cmstype+"&filter_exploit_text="+plugin).read()
                     regex = '/download/(.+?)/">'
                     pattern =  re.compile(regex)
                     ExploitID = re.findall(pattern,htmltext)
