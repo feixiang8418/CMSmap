@@ -912,7 +912,7 @@ class DruScan:
                 self.Drutheme = DruTheme[0]
                 msg = "Drupal Theme: "+ self.Drutheme ; report.info(msg)
                 searcher.query = [self.Drutheme] ; searcher.Themes()
-            return DruTheme[0]
+            return DruTheme[0] if not DruTheme else None
         except urllib2.HTTPError, e:
             #print e.code
             pass
